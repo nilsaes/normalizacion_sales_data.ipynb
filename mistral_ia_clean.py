@@ -202,4 +202,4 @@ consultar("¿Cómo evolucionan las ventas mes a mes?")
 consultar("¿Qué cliente realizó el pedido con el monto total más alto?")
 consultar("¿Cuál es el país con el ticket promedio más alto?")
 consultar("¿Cuántos pedidos hay en estado Processing vs Cancelled?")
-consultar("¿Cuál es la temporada con más ventas?")
+consultar("¿Cuál es la temporada con más ventas?")# Comentario final para activar el commit de Nilsa
