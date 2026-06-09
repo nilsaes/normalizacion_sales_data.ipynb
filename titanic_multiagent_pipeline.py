@@ -20,7 +20,7 @@ from sklearn.metrics import accuracy_score, classification_report
 """Paso 2: AGENTE 1 - El Normalizador"""
 
 def agente_normalizador_titanic(path_csv):
-    print("🤖 [Agente 1] Iniciando limpieza, imputación y codificación...")
+    print(" [Agente 1] Iniciando limpieza, imputación y codificación...")
 
     # Leer el archivo crudo
     df = pd.read_csv(path_csv)
@@ -46,13 +46,13 @@ def agente_normalizador_titanic(path_csv):
     columnas_a_escalar = ['Age', 'SibSp', 'Parch', 'Fare']
     df[columnas_a_escalar] = scaler.fit_transform(df[columnas_a_escalar])
 
-    print("✅ [Agente 1] Proceso terminado. Enviando 'dataset limpio'.\n")
+    print(" [Agente 1] Proceso terminado. Enviando 'dataset limpio'.\n")
     return df
 
 """Paso 3: AGENTE 2 - El Entrenador"""
 
 def agente_entrenador(df, target_column='Survived'):
-    print("🤖 [Agente 2] Aplicando validación y entrenando modelo...")
+    print(" [Agente 2] Aplicando validación y entrenando modelo...")
 
     # Separar características (X) de la variable objetivo (y)
     X = df.drop(columns=[target_column])
@@ -72,17 +72,17 @@ def agente_entrenador(df, target_column='Survived'):
     acc = accuracy_score(y_test, predicciones)
     reporte = classification_report(y_test, predicciones)
 
-    print("✅ [Agente 2] Entrenamiento completado. Enviando 'métricas + modelo'.\n")
+    print(" [Agente 2] Entrenamiento completado. Enviando 'métricas + modelo'.\n")
     return acc, reporte
 
 """Paso 4: AGENTE 3 - El Comunicador"""
 
 def agente_comunicador(accuracy, reporte_detallado):
-    print("🤖 [Agente 3] Traduciendo métricas a lenguaje natural...\n")
+    print(" [Agente 3] Traduciendo métricas a lenguaje natural...\n")
 
     reporte_final = f"""
     ==================================================================
-    📢 REPORTE DE RESULTADOS: PREDICCIÓN DE SUPERVIVENCIA EN EL TITANIC
+REPORTE DE RESULTADOS: PREDICCIÓN DE SUPERVIVENCIA EN EL TITANIC
     ==================================================================
     ¡Hola! El análisis automatizado del pipeline ha finalizado con éxito.
 
